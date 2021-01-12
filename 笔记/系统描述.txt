@@ -1,0 +1,35 @@
+wifi: 模式  Station/SoftAp/SoftAp + Station
+CPU: 32位
+网络协议： IPV4   TCP  HTTP FTP MQTT
+8266:   主板，  c语言， 温湿度。
+
+将设备接入互联网，物联网。
+应用领域广泛。
+物联网通讯方式：
+（1） 移动空中网（2G，3G）  （2） 传统互联网（wifi, 以太网） （3） 有线传输（电线，RS232，USB，RS385） （4）近距离里先传输（无线RF433/315M，Zigbee，Z-ware， Lora， 蓝牙）
+系统描述：
+ESP8266,  https://www.espressif.com/
+立创公司
+https://lceda.cn/jixin003/iot_board_esp12
+
+
+使用方式：
+(1) AT 指令： 需要额外的单片机
+（2） SDK 编程： 什么是SDK编程。 带操作系统的sdk.
+
+API: 提供接口。
+
+
+编程环境的搭建：
+http://wiki.ai-thinker.com/tools
+
+
+注意：
+ESP_12F 外部Flash: 4MB == 4094kb == 32Mbit  
+4MB Flash == 0x000 000 ~ 0x3FF FFF
+扇区编号： 0x000 ~ 0X3FF [flash 扇区 == 4kb]
+
+6 部分：
+    1 系统程序  必要固件  2 系统程序  用户程序  3 用户数据  4 参数部分  5 默认参数  6 系统参数
+    
+

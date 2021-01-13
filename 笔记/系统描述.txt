@@ -21,7 +21,7 @@ API: 提供接口。
 
 
 编程环境的搭建：
-http://wiki.ai-thinker.com/tools
+http://wiki.ai-thinker.com/esp8266
 
 
 注意：

@@ -31,5 +31,55 @@ ESP_12F 外部Flash: 4MB == 4094kb == 32Mbit
 
 6 部分：
     1 系统程序  必要固件  2 系统程序  用户程序  3 用户数据  4 参数部分  5 默认参数  6 系统参数
-    
+7 烧录文件：
+ esp_init_data_default.bin
+ blank.bin
+ eaqle.flash.bin 
+ eaqle.irom0text.bin 
 
+
+
+外设模块： 头文件和c文件：
+app/driver/
+app/include/driver
+
+
+内核回调：
+user_init(void)
+回调函数
+void xxx()
+中断函数
+
+（1）应用函数（2） 回调函数 （3）中断服务 （4） 执行任务
+
+串口乱码： 
+前部分波特率： 74880
+后部分波特率： 115200
+
+
+添加驱动：
+c文件 app/driver/
+h文件 app/include/ 
+
+
+自定义文件夹：修改makefile
+(1) 根目录
+（2）app根目录
+（3）驱动文件
+第一修改：
+uart/makefile
+第二修改：
+app/makefile
+SUBDIRS=    \
+	user    \
+	driver
+
+
+COMPONENTS_eagle.app.v6 = \
+	user/libuser.a  \
+	driver/libdriver.a
+
+，non-OS SDK 不⽀持抢占任务或进程切换。因此开发者需要⾃⾏保证程
+序的正确执⾏，⽤户代码不能⻓期占⽤ CPU。
+
+⽤ system_soft_wdt_feed() API 来喂软件看⻔狗，⽽不建议禁⽤软件看⻔狗。
